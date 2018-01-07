@@ -1,0 +1,9 @@
+{
+  "CLIENT_ID"      : "11064483286789-9er0dmd9khd1smalf8f6ti4h608tqmlu.apps.googleusercontent.com",
+  "CLIENT_SECRET"  : "zs8WudqyufZejMFd0ZNXWhH_",
+  "REDIRECT_URL"   : "http://localhost:9090/oauth2callback",
+  "scope"          : ["https://www.googleapis.com/auth/youtube", "https://www.googleapis.com/auth/youtube.upload"],
+  "token_dir_path" : "https://accounts.google.com/o/oauth2/token",
+  "token_file"     : "token.txt",
+  "video_dir_path" : "pathtoapplication/videos/"
+}
