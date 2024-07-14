@@ -1,8 +1,11 @@
+import { Provider } from "react-redux";
+import { createContext, useContext, useState } from "react";
+
+import appStore from "../utils/appStore";
 import Footer from "../structure/Footer";
 import Headers from "../structure/Headers";
 import { RenderNavigation } from "../structure/RenderNavigation";
 
-import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext(null);
 export const useAuthInfo = () => useContext(AuthContext)
@@ -26,13 +29,15 @@ const AuthWrapper = () => {
     }
 
     return (
-        <AuthContext.Provider value = {{user, login, logout}}>
-            <>
-                <Headers />
-                <RenderNavigation />
-                <Footer />
-            </>
-        </AuthContext.Provider>
+        <Provider store={appStore}>
+            <AuthContext.Provider value = {{user, login, logout}}>
+                <>
+                    <Headers />
+                    <RenderNavigation />
+                    <Footer />
+                </>
+            </AuthContext.Provider>
+        </Provider>
     )
 }
 

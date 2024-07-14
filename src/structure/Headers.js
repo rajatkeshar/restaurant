@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useAuthInfo } from "../auth/AuthWrapper";
 import { navigations } from "./Navigation";
 
 const Headers = () => {
     const {user, logout} = useAuthInfo();
+    const cartItems = useSelector((store)=> store.cart.items); //Subscribe to the store using selector
     const HandleLogout = () => {
         logout();
     }
     const MenuItem = ({r}) => {
         return (
-            <button><Link to={r.path}>{r.name}</Link></button>
+            (r.name === 'Cart')? (
+                <button><Link to={r.path}>{r.name} - ({cartItems.length}) items</Link></button>
+            ): (
+                <button><Link to={r.path}>{r.name}</Link></button>
+            )
         )
     }
 
