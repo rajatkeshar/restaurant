@@ -67,12 +67,12 @@ const Item = () => {
             <div className="add-to-cart">
             { e?.count? (
                 <div className="count-container">
-                    <button className="count-button" onClick={() => HandleRemoveFromCart(item.id, -1)}>-</button>
+                    <button className="count-button" onClick={() => HandleRemoveFromCart(item.id)}>-</button>
                     <span><h4>{e.count}</h4></span>
-                    <button className="count-button" onClick={() => HandleAddToCart(item, 1)}>+</button>
+                    <button className="count-button" onClick={() => HandleAddToCart(item)}>+</button>
                 </div>
                 ): (
-                    <button className="add-to-cart-primary" data-product-id="2" onClick={() => HandleAddToCart(item, 1)}>Add to Cart</button>
+                    <button className="add-to-cart-primary" data-product-id="2" onClick={() => HandleAddToCart(item)}>Add to Cart</button>
                 )
             }
             </div>

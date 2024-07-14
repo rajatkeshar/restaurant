@@ -5,10 +5,6 @@ import { Link } from "react-router-dom";
 const Menu = (props) => {
 
     const {items} = props;
-    
-    if(!items.length) {
-        
-    }
 
 	return (!items.length)? (
          <React.Fragment>
